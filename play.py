@@ -1,12 +1,12 @@
+import re
 def If_there(text):
-#Daft, but removes crazy space formatting
-    text_list = text.split()
-    for word in text_list:
-        text +=" "+word
+#Remove carrage return and excessive white space
+    text = re.sub('\n', ' ', text)
+    text = re.sub(' +', ' ', text)
         
     look='cat sat'
     
     if look in text:
         print('cat')
-        
-If_there('The cat \n         sat on the matt')
+
+If_there('the cat \n  sat house')
